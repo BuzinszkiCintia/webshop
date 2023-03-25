@@ -1,7 +1,6 @@
 const fs = require("fs");
 const cors = require("cors");
 const express = require("express");
-const { json } = require("express");
 const app = express();
 
 app.use(
@@ -10,11 +9,8 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.end("It's working");
-});
+app.use(express.json());
 
 app.get("/read", function (req, res) {
   fs.readFile("./webshopItems.json", "utf8", (err, jsonString) => {
@@ -22,7 +18,6 @@ app.get("/read", function (req, res) {
       console.log("File read failed:", err);
       return;
     }
-    console.log(jsonString);
     return res.end(jsonString);
   });
 });
@@ -57,7 +52,6 @@ app.post("/create", async (req, res, next) => {
 });
 
 app.post("/delete", async (req, res, next) => {
-  console.log(req.body.index);
   fs.readFile(
     "./webshopItems.json",
     "utf8",
