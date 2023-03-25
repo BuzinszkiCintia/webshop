@@ -1,24 +1,79 @@
 {
   "items": [
     {
-      "name": "dfds",
-      "descript": "kjbk",
-      "quantity": "20"
+      "name": "Vegetable box 1",
+      "descript": "Broccoli, Cucumbers, Corn, Potato, Parsnip, Onion, Mushrooms",
+      "quantity": "40"
     },
     {
-      "name": "dfdsl,pokp",
-      "descript": "kjbkldédo",
+      "name": "Vegetable box 2",
+      "descript": "Zucchini, Tomatoes, Sweet Potato, Spinach ",
       "quantity": "26"
     },
     {
-      "name": "dfds",
-      "descript": "kjbk",
-      "quantity": "20"
+      "name": "Vegetable box 3",
+      "descript": "Cucumbers, Gourds, Kale, Sweet peppers,Water Chestnuts, Yam  ",
+      "quantity": "32"
     },
     {
-      "name": "Legyen normális neve",
-      "descript": "ez a description",
+      "name": "All green veggie box",
+      "descript": "Cucumbers, Zucchini, Spinach, Snow Peas, Butter Lettuce, Broccolini ",
+      "quantity": "100"
+    },
+    {
+      "name": "Squash mix box",
+      "descript": "Acorn Squash, Butternut Squash, Patti Pan Squash, Spaghetti Squash",
+      "quantity": "2"
+    },
+    {
+      "name": "Meat Soup veggie box",
+      "descript": "Onion, Potato, Carrot, Turnip, Kohlrabi, Celery",
+      "quantity": "10"
+    },
+    {
+      "name": "Mediterranean veggie box",
+      "descript": "Yellow bell peppers, Carrot, Radish, Cucumber, Broccoli, Green beans, Tomatoes ",
+      "quantity": "75"
+    },
+    {
+      "name": "Greek salad veggie box",
+      "descript": "Cucumber, Tomatoes, Olive, Purple Onion",
+      "quantity": "34"
+    },
+    {
+      "name": "Mediterranean fruit box",
+      "descript": "Banana, Clementine, Figs, Orange, Kiwi, Mango ",
       "quantity": "200"
+    },
+    {
+      "name": "Fruit box 1",
+      "descript": "Orange, Apple, Nectarine, Lime, Pear ",
+      "quantity": "98"
+    },
+    {
+      "name": "Fruit box 2",
+      "descript": "Raspberries, Cantaloupe, Apples, Dates, Currants  ",
+      "quantity": "66"
+    },
+    {
+      "name": "Fruit box 3",
+      "descript": "Kumquat, Kiwi, Horned Melon, Grapes, Grapefruit, Guava",
+      "quantity": "83"
+    },
+    {
+      "name": "Berry box",
+      "descript": "Raspberries, Strawberry, Cranberry, Blackberry, Boysenberry, Blueberry",
+      "quantity": "12"
+    },
+    {
+      "name": "Mixed box 1",
+      "descript": "Carrot, Cucumber, Tomato, Apple, Orange, Pear",
+      "quantity": "78"
+    },
+    {
+      "name": "Mixed box 2",
+      "descript": "Jujube, Butter Lettuce, Honeydew Melon, Dragon fruit ",
+      "quantity": "1"
     }
   ]
 }
