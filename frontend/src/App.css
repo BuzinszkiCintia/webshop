@@ -24,15 +24,11 @@ body {
   text-decoration: none;
   font-size: larger;
   font-weight: bold;
+  width: 8rem;
+  text-align: center;
 }
 
 .link:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  color: black;
-
+  color: rgb(131, 103, 199);
   cursor: pointer;
-}
-
-.link:nth-child(2) {
-  padding-left: 1rem;
 }
