@@ -1,5 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  BaseMainContainer,
+  InputContainer,
+  Title,
+  Input,
+  TextArea,
+  Button,
+} from "./CreateItem.styled";
+import { Loader } from "../ReadItem/ReadItem.style";
+import loaderIMG from "../../images/loader.png";
 
 const CreateItem = () => {
   const [name, setName] = useState("");
@@ -30,9 +40,8 @@ const CreateItem = () => {
     if (name || descript || quantity) {
       setLoading(true);
       return pushData();
-    } else {
-      alert("Please, fill in all the fields.");
     }
+    alert("Please, fill in all the fields.");
   };
 
   const handleNameChange = (e) => {
@@ -46,22 +55,34 @@ const CreateItem = () => {
   };
 
   return (
-    <div>
-      <input type="text" onChange={handleNameChange} placeholder="Item name" />
-      <input
-        type="text"
-        onChange={handleDesChange}
-        placeholder="Item decription"
-      />
-      <input
-        type="number"
-        onChange={handleQuantityChange}
-        placeholder="Quantity"
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Add
-      </button>
-    </div>
+    <BaseMainContainer>
+      {loading ? (
+        <Loader src={loaderIMG} alt="loader" />
+      ) : (
+        <InputContainer>
+          <Title>Create new box to save</Title>
+          <Input
+            type="text"
+            onChange={handleNameChange}
+            placeholder="Item name"
+          />
+          <TextArea
+            type="text-"
+            onChange={handleDesChange}
+            placeholder="Item decription"
+            rows="5"
+          />
+          <Input
+            type="number"
+            onChange={handleQuantityChange}
+            placeholder="Quantity"
+          />
+          <Button type="submit" onClick={handleSubmit}>
+            Add
+          </Button>
+        </InputContainer>
+      )}
+    </BaseMainContainer>
   );
 };
 

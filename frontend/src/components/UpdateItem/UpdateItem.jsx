@@ -2,6 +2,16 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  BaseMainContainer,
+  InputContainer,
+  Title,
+  Input,
+  TextArea,
+  Button,
+} from "../CreateItem/CreateItem.styled";
+import { Loader } from "../ReadItem/ReadItem.style";
+import loaderIMG from "../../images/loader.png";
 
 const UpdateItem = (props) => {
   const itemValue = useLocation().state.item;
@@ -45,21 +55,35 @@ const UpdateItem = (props) => {
     if (name || descript || quantity) {
       setLoading(true);
       return updateData();
-    } else {
-      alert("Please, fill in all the fields.");
     }
+    alert("Please, fill in all the fields.");
   };
 
   return (
-    <div>
-      <h1>Update</h1>
-      <input type="text" onChange={handleNameChange} value={name} />
-      <input type="text" onChange={handleDesChange} value={descript} />
-      <input type="number" onChange={handleQuantityChange} value={quantity} />
-      <button type="submit" onClick={handleSubmit}>
-        Update
-      </button>
-    </div>
+    <BaseMainContainer>
+      {loading ? (
+        <Loader src={loaderIMG} alt="loader" />
+      ) : (
+        <InputContainer>
+          <Title>Update box</Title>
+          <Input type="text" onChange={handleNameChange} value={name} />
+          <TextArea
+            type="text"
+            onChange={handleDesChange}
+            value={descript}
+            rows="5"
+          />
+          <Input
+            type="number"
+            onChange={handleQuantityChange}
+            value={quantity}
+          />
+          <Button type="submit" onClick={handleSubmit}>
+            Update
+          </Button>
+        </InputContainer>
+      )}
+    </BaseMainContainer>
   );
 };
 
