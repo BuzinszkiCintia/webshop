@@ -13,11 +13,11 @@ function App() {
         <Route path="/create" element={<CreateItem />} />
         <Route path="/:name" element={<UpdateItem />} />
       </Routes>
-      <div>
-        <Link key="create" to="/create">
-          Create
+      <div id="navbar">
+        <Link className="link" key="create" to="/create">
+          Create box
         </Link>
-        <Link key="read" to="/">
+        <Link className="link" key="read" to="/">
           Webshop
         </Link>
       </div>
