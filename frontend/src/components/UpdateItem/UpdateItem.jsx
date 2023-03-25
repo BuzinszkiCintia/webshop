@@ -52,7 +52,7 @@ const UpdateItem = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name || descript || quantity) {
+    if (name && descript && quantity) {
       setLoading(true);
       return updateData();
     }

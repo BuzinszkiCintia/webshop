@@ -37,7 +37,7 @@ const CreateItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name || descript || quantity) {
+    if (name && descript && quantity) {
       setLoading(true);
       return pushData();
     }
@@ -67,7 +67,7 @@ const CreateItem = () => {
             placeholder="Item name"
           />
           <TextArea
-            type="text-"
+            type="text"
             onChange={handleDesChange}
             placeholder="Item decription"
             rows="5"
