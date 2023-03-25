@@ -1,5 +1,18 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import {
+  MainContainer,
+  Title,
+  GridConatiner,
+  GridCard,
+  BoxName,
+  BoxDescript,
+  ButtonContainer,
+  ModifyLink,
+  BoxQuantity,
+  DeleteButton,
+  Loader,
+} from "./ReadItem.style";
+import loaderIMG from "../../images/loader.png";
 
 const Read = () => {
   const [data, setData] = useState();
@@ -37,36 +50,41 @@ const Read = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        {data?.items.map((item, index) => {
-          return (
-            <div key={index}>
-              <h2>{item.name}</h2>
-              <h3>{item.descript}</h3>
-              <div>
-                <Link
-                  key={index}
-                  to={`/${item.name}`}
-                  state={{ item: item, index: index }}
-                >
-                  <span className="material-symbols-outlined">edit</span>
-                </Link>
+    <MainContainer>
+      <Title>Save! Different vegetable and fruit boxes at a good price!</Title>
+      {loading ? (
+        <Loader src={loaderIMG} alt="loader" />
+      ) : (
+        <GridConatiner>
+          {data?.items.map((item, index) => {
+            return (
+              <GridCard key={index}>
+                <BoxName>{item.name}</BoxName>
+                <BoxDescript> Box contains: {item.descript}</BoxDescript>
+                <ButtonContainer>
+                  <ModifyLink
+                    key={index}
+                    to={`/${item.name}`}
+                    state={{ item: item, index: index }}
+                  >
+                    <span className="material-symbols-outlined">edit</span>
+                  </ModifyLink>
 
-                <h3>{item.quantity}</h3>
-                <button
-                  onClick={() => {
-                    removeData(index);
-                  }}
-                >
-                  <span className="material-symbols-outlined">delete</span>
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+                  <BoxQuantity>Quantity: {item.quantity}</BoxQuantity>
+                  <DeleteButton
+                    onClick={() => {
+                      removeData(index);
+                    }}
+                  >
+                    <span className="material-symbols-outlined">delete</span>
+                  </DeleteButton>
+                </ButtonContainer>
+              </GridCard>
+            );
+          })}
+        </GridConatiner>
+      )}
+    </MainContainer>
   );
 };
 
